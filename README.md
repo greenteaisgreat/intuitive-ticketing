@@ -1,2 +1,3 @@
-# ticketing-app
-A ticketing application to practice building with Next.js
+#ticketing-app
+
+A ticketing application built using Next.js
