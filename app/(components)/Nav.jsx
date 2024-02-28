@@ -1,5 +1,5 @@
-const page = () => {
-    return <div>page</div>;
+const Nav = () => {
+    return <div>Nav</div>;
 };
 
-export default page;
+export default Nav;
