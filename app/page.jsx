@@ -1,5 +1,5 @@
-const Dashboard = () => {
-    return <div>Dashboard</div>;
+const Dashboard = ({ params }) => {
+    return <div>Dashboard {params.id}</div>;
 };
 
 export default Dashboard;
