@@ -18,9 +18,9 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={inter.className}>
-                <div className="flex h-screen max-h-screen flex-col">
+                <div className="flex h-screen max-h-screen flex-col bg-page-900">
                     <Nav />
-                    <div className="flex-grow overflow-y-auto bg-page-400">
+                    <div className="text-default-100 flex-grow overflow-y-auto bg-page-900">
                         {children}
                     </div>
                 </div>
