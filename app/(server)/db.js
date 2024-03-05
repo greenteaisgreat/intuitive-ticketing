@@ -4,7 +4,11 @@ import { NextResponse } from 'next/server';
 export default async function connectToDB() {
     try {
         await mongoose.connect(process.env.MONGODB_URI);
-        console.log('Connected to database!');
+
+        return NextResponse.json({
+            message: 'Connected to the database!',
+            status: 200,
+        });
     } catch (err) {
         return NextResponse.json(
             {
