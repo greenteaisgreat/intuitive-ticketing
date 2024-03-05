@@ -5,7 +5,7 @@ import StatusDisplay from './StatusDisplay';
 
 const TicketCard = () => {
     return (
-        <div className="m-3 flex flex-col rounded-md bg-card-400 p-3 shadow-xl hover:bg-card-500">
+        <div className="m-3 flex flex-col rounded-lg bg-card-400 p-3 shadow-xl hover:bg-card-500">
             <div className="mb-3 flex">
                 <PriorityDisplay />
                 <div className="ml-auto">
@@ -25,7 +25,7 @@ const TicketCard = () => {
             <div className="mt-2 flex">
                 <div className="flex flex-col">
                     <p className="my-1 text-xs">
-                        {new Date().toDateString()} &nbsp; | &nbsp;
+                        {new Date().toDateString()}&nbsp; | &nbsp;
                         {new Date().toLocaleTimeString()}
                     </p>
                     <ProgressDisplay />
