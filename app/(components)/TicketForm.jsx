@@ -9,10 +9,10 @@ const TicketForm = () => {
     const startingTicketData = {
         title: '',
         description: '',
-        category: 'General IT Issue',
+        category: 'general',
         priority: 1,
         progress: 0,
-        status: 'Not Started',
+        status: 'not-started',
         active: false,
     };
 
@@ -66,12 +66,12 @@ const TicketForm = () => {
                     value={formData.category}
                     onChange={handleChange}
                 >
-                    <option value="General">General IT Issue</option>
-                    <option value="Software">Software Issue</option>
-                    <option value="Hardware">Hardware Issue</option>
-                    <option value="Locked">Locked Out of Account</option>
-                    <option value="Service">Customer Service Issue</option>
-                    <option value="Other">Other</option>
+                    <option value="general">General IT Issue</option>
+                    <option value="software">Software Issue</option>
+                    <option value="hardware">Hardware Issue</option>
+                    <option value="locked">Locked Out of Account</option>
+                    <option value="service">Customer Service Issue</option>
+                    <option value="other">Other</option>
                 </select>
 
                 <label htmlFor="priority">Priority</label>
@@ -122,6 +122,7 @@ const TicketForm = () => {
                     />
                     <label htmlFor="5">5</label>
                 </div>
+
                 <label htmlFor="progress">Progress</label>
                 <input
                     type="range"
@@ -130,7 +131,20 @@ const TicketForm = () => {
                     value={formData.progress}
                     min={0}
                     max={100}
+                    onChange={handleChange}
                 />
+
+                <label htmlFor="status">Status</label>
+                <select
+                    name="status"
+                    id="status"
+                    value={formData.status}
+                    onChange={handleChange}
+                >
+                    <option value="not-started">Not Started</option>
+                    <option value="started">In Progress</option>
+                    <option value="finished">Finished</option>
+                </select>
             </form>
         </div>
     );
