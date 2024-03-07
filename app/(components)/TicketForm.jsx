@@ -28,9 +28,17 @@ const TicketForm = () => {
         }));
     };
 
+    const handleSubmit = () => {
+        console.log('Form Submitted!');
+    };
+
     return (
         <div className="flex justify-center">
-            <form method="POST">
+            <form
+                method="post"
+                className="flex w-1/2 flex-col gap-3"
+                onSubmit={handleSubmit}
+            >
                 <h3>Create Your Ticket</h3>
                 <label htmlFor="title">Title</label>
                 <input
@@ -40,6 +48,15 @@ const TicketForm = () => {
                     onChange={handleChange}
                     required={true}
                     value={formData.title}
+                />
+                <label htmlFor="title">Description</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    onChange={handleChange}
+                    required={true}
+                    value={formData.description}
+                    rows="5"
                 />
             </form>
         </div>
