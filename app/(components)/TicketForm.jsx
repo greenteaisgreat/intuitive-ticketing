@@ -145,6 +145,13 @@ const TicketForm = () => {
                     <option value="started">In Progress</option>
                     <option value="finished">Finished</option>
                 </select>
+                <div className="flex justify-center">
+                    <input
+                        type="submit"
+                        className="btn"
+                        value="Create Ticket"
+                    />
+                </div>
             </form>
         </div>
     );
