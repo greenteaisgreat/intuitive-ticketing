@@ -9,7 +9,7 @@ const TicketForm = () => {
     const startingTicketData = {
         title: '',
         description: '',
-        category: '',
+        category: 'General IT Issue',
         priority: 1,
         progress: 0,
         status: 'Not Started',
@@ -49,7 +49,7 @@ const TicketForm = () => {
                     required={true}
                     value={formData.title}
                 />
-                <label htmlFor="title">Description</label>
+                <label htmlFor="description">Description</label>
                 <textarea
                     id="description"
                     name="description"
@@ -58,6 +58,25 @@ const TicketForm = () => {
                     value={formData.description}
                     rows="5"
                 />
+
+                <label htmlFor="category">Category</label>
+                <select
+                    name="category"
+                    id="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                >
+                    <option value="General">General IT Issue</option>
+                    <option value="Software">Software Issue</option>
+                    <option value="Hardware">Hardware Issue</option>
+                    <option value="Locked Account">
+                        Locked Out of Account
+                    </option>
+                    <option value="Service Issue">
+                        Customer Service Issue
+                    </option>
+                    <option value="Other">Other</option>
+                </select>
             </form>
         </div>
     );
