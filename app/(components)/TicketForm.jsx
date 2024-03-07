@@ -69,14 +69,59 @@ const TicketForm = () => {
                     <option value="General">General IT Issue</option>
                     <option value="Software">Software Issue</option>
                     <option value="Hardware">Hardware Issue</option>
-                    <option value="Locked Account">
-                        Locked Out of Account
-                    </option>
-                    <option value="Service Issue">
-                        Customer Service Issue
-                    </option>
+                    <option value="Locked">Locked Out of Account</option>
+                    <option value="Service">Customer Service Issue</option>
                     <option value="Other">Other</option>
                 </select>
+
+                <label htmlFor="priority">Priority</label>
+                <div>
+                    <input
+                        id="priority-1"
+                        name="priority"
+                        type="radio"
+                        onChange={handleChange}
+                        value={1}
+                        checked={formData.priority == 1}
+                    />
+                    <label htmlFor="1">1</label>
+                    <input
+                        id="priority-2"
+                        name="priority"
+                        type="radio"
+                        onChange={handleChange}
+                        value={2}
+                        checked={formData.priority == 2}
+                    />
+                    <label htmlFor="2">2</label>
+                    <input
+                        id="priority-3"
+                        name="priority"
+                        type="radio"
+                        onChange={handleChange}
+                        value={3}
+                        checked={formData.priority == 3}
+                    />
+                    <label htmlFor="3">3</label>
+                    <input
+                        id="priority-4"
+                        name="priority"
+                        type="radio"
+                        onChange={handleChange}
+                        value={4}
+                        checked={formData.priority == 4}
+                    />
+                    <label htmlFor="4">4</label>
+                    <input
+                        id="priority-5"
+                        name="priority"
+                        type="radio"
+                        onChange={handleChange}
+                        value={5}
+                        checked={formData.priority == 5}
+                    />
+                    <label htmlFor="5">5</label>
+                </div>
             </form>
         </div>
     );
