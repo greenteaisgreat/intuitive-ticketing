@@ -122,6 +122,15 @@ const TicketForm = () => {
                     />
                     <label htmlFor="5">5</label>
                 </div>
+                <label htmlFor="progress">Progress</label>
+                <input
+                    type="range"
+                    id="progress"
+                    name="progress"
+                    value={formData.progress}
+                    min={0}
+                    max={100}
+                />
             </form>
         </div>
     );
