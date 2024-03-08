@@ -1,5 +1,19 @@
 import TicketCard from './(components)/TicketCard';
 
+const getTickets = async () => {
+    try {
+        const res = await fetch('http://localhost:3000/api/Tickets', {
+            //doesn't store the fetched ticket data if no new tickets exist
+            cache: 'no-store',
+        });
+
+        //if there is new ticket data, it will return the response
+        return res.json();
+    } catch (err) {
+        console.log('There was an error retrieving the tickets ', err);
+    }
+};
+
 const Dashboard = () => {
     return (
         <div className="p-5">
