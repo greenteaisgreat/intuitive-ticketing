@@ -16,7 +16,7 @@ export async function POST(req) {
         );
     } catch (err) {
         return NextResponse.json(
-            { message: 'There was an error posting the ticket', err },
+            { message: 'There was an error posting the ticket ', err },
             { status: 500 }
         );
     }
@@ -29,7 +29,7 @@ export async function GET(req) {
         return NextResponse.json({ tickets }, { status: 200 });
     } catch (err) {
         return NextResponse.json(
-            { message: 'There was an error retrieving the tickets', err },
+            { message: 'There was an error retrieving the tickets ', err },
             { status: 500 }
         );
     }
