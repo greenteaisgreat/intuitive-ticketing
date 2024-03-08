@@ -14,7 +14,15 @@ const getTickets = async () => {
     }
 };
 
-const Dashboard = () => {
+const Dashboard = async () => {
+    const { tickets } = await getTickets();
+
+    const uniqueCategories = [
+        //iterates over every ticket's category and returns it; Set() ensures
+        //there are no duplicates so that there's an ordering scheme for every ticket,
+        //based on the category
+        ...new Set(tickets?.map(({ category }) => category)),
+    ];
     return (
         <div className="p-5">
             {/* anything over a large screen, 2col grid; anything over xl screen, 4col grid.
