@@ -27,7 +27,7 @@ const Dashboard = async () => {
             <div>
                 {tickets &&
                     uniqueCategories?.map((uniqueCategory, categoryIndex) => (
-                        <div key={categoryIndex} className="mb-4">
+                        <div key={categoryIndex} className="mb-8 mt-2">
                             <h2>{uniqueCategory}</h2>
                             <div className="grid-cols-2 lg:grid xl:grid-cols-4">
                                 {tickets
