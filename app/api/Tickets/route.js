@@ -10,14 +10,39 @@ export async function POST(req) {
 
         await Ticket.create(ticketData);
 
-        return NextResponse.json({
-            message: 'Ticket successfully created!',
-            status: 201,
-        });
+        return NextResponse.json(
+            {
+                message: 'Ticket successfully created!',
+            },
+            { status: 201 }
+        );
     } catch (err) {
         return NextResponse.json(
             {
                 message: 'There was an error posting the ticket',
+                err,
+            },
+            {
+                status: 500,
+            }
+        );
+    }
+}
+
+export async function GET(req) {
+    try {
+        const tickets = await Ticket.find();
+
+        return NextResponse.json(
+            {
+                tickets,
+            },
+            { status: 200 }
+        );
+    } catch (err) {
+        return NextResponse.json(
+            {
+                message: 'There was an error retrieving the tickets',
                 err,
             },
             {
