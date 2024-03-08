@@ -16,7 +16,6 @@ const getTickets = async () => {
 
 const Dashboard = async () => {
     const { tickets } = await getTickets();
-
     const uniqueCategories = [
         //iterates over every ticket's category and returns it; Set() ensures
         //there are no duplicates so that there's an ordering scheme for every ticket,
@@ -25,13 +24,27 @@ const Dashboard = async () => {
     ];
     return (
         <div className="p-5">
-            {/* anything over a large screen, 2col grid; anything over xl screen, 4col grid.
-             must set the initial breakpoint (lg:grid) for any additional formatting to happen*/}
-            <div className="grid-cols-2 lg:grid xl:grid-cols-4">
-                <TicketCard />
-                <TicketCard />
-                <TicketCard />
-                <TicketCard />
+            <div>
+                {tickets &&
+                    uniqueCategories?.map((uniqueCategory, categoryIndex) => (
+                        <div key={categoryIndex} className="mb-4">
+                            <h2>{uniqueCategory}</h2>
+                            <div className="grid-cols-2 lg:grid xl:grid-cols-4">
+                                {tickets
+                                    .filter(
+                                        (ticket) =>
+                                            ticket.category === uniqueCategory
+                                    )
+                                    .map((filteredTicket, _index) => (
+                                        <TicketCard
+                                            id={_index}
+                                            key={_index}
+                                            ticket={filteredTicket}
+                                        />
+                                    ))}
+                            </div>
+                        </div>
+                    ))}
             </div>
         </div>
     );
