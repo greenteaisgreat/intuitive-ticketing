@@ -33,6 +33,7 @@ const TicketForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        //this fetch request is using client side rendering
         const res = await fetch('/api/Tickets', {
             method: 'POST',
             body: JSON.stringify({ formData }),
