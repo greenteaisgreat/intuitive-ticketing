@@ -162,9 +162,9 @@ const TicketForm = () => {
                     value={formData.status}
                     onChange={handleChange}
                 >
-                    <option value="not-started">Not Started</option>
-                    <option value="started">In Progress</option>
-                    <option value="finished">Finished</option>
+                    <option value="Not Started">Not Started</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Finished">Finished</option>
                 </select>
                 <div className="flex justify-center">
                     <input
