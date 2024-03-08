@@ -11,10 +11,10 @@ const TicketForm = () => {
     const startingTicketData = {
         title: '',
         description: '',
-        category: '',
+        category: 'General IT Issues',
         priority: 1,
         progress: 0,
-        status: 'not-started',
+        status: 'Not Started',
         active: false,
     };
 
