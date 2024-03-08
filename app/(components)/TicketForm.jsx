@@ -11,7 +11,7 @@ const TicketForm = () => {
     const startingTicketData = {
         title: '',
         description: '',
-        category: 'general',
+        category: '',
         priority: 1,
         progress: 0,
         status: 'not-started',
@@ -83,12 +83,16 @@ const TicketForm = () => {
                     value={formData.category}
                     onChange={handleChange}
                 >
-                    <option value="general">General IT Issue</option>
-                    <option value="software">Software Issue</option>
-                    <option value="hardware">Hardware Issue</option>
-                    <option value="locked">Locked Out of Account</option>
-                    <option value="service">Customer Service Issue</option>
-                    <option value="other">Other</option>
+                    <option value="General IT Issues">General IT Issue</option>
+                    <option value="Software Issues">Software Issue</option>
+                    <option value="Hardware Issues">Hardware Issue</option>
+                    <option value="Locked Accounts">
+                        Locked Out of Account
+                    </option>
+                    <option value="Service Issues">
+                        Customer Service Issue
+                    </option>
+                    <option value="Other">Other</option>
                 </select>
 
                 <label htmlFor="priority">Priority</label>
