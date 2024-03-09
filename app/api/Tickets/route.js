@@ -3,6 +3,7 @@
 import Ticket from '@/app/(models)/Ticket';
 import { NextResponse } from 'next/server';
 
+//creates a new ticket
 export async function POST(req) {
     try {
         const body = await req.json();
@@ -22,6 +23,7 @@ export async function POST(req) {
     }
 }
 
+//retrieves all tickets
 export async function GET(req) {
     try {
         const tickets = await Ticket.find();
