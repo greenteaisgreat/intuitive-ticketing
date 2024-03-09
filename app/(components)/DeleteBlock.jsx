@@ -9,9 +9,12 @@ const DeleteBlock = ({ id }) => {
     const router = useRouter();
 
     const deleteTicket = async () => {
-        const res = await fetch(`http://localhost:3000/api/Tickets/${id}`, {
-            method: 'DELETE',
-        });
+        const res = await fetch(
+            `https://intuitive-ticketing.vercel.app/${id}`,
+            {
+                method: 'DELETE',
+            }
+        );
 
         if (res.ok) {
             router.refresh();
