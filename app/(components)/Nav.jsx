@@ -13,9 +13,6 @@ const Nav = () => {
                     <FontAwesomeIcon icon={faTicket} className="icon" />
                 </Link>
             </div>
-            <div>
-                <p className="text-default-100">nategbornstein@gmail.com</p>
-            </div>
         </nav>
     );
 };
