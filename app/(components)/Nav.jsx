@@ -13,6 +13,11 @@ const Nav = () => {
                     <FontAwesomeIcon icon={faTicket} className="icon" />
                 </Link>
             </div>
+            <div>
+                <p className="mr-4 text-2xl font-bold text-default-100">
+                    I.T. (Intuitive Ticketing)
+                </p>
+            </div>
         </nav>
     );
 };
