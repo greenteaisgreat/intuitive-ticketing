@@ -1,3 +1,4 @@
-# ticketing-app
+# I.T. (Intuitive Ticketing)
 
-A ticketing application built using Next.js
+This ticketing application was built with Next.js and the new Next.js Router.
+The database is powered by MongoDB on Atlas.
