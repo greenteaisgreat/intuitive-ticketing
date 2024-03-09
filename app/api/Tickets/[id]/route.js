@@ -1,6 +1,7 @@
 import Ticket from '@/app/(models)/Ticket';
 import { NextResponse } from 'next/server';
 
+//finds a specific ticket
 export async function GET(req, { params }) {
     try {
         const { id } = params;
@@ -16,6 +17,7 @@ export async function GET(req, { params }) {
     }
 }
 
+//deletes a specfic ticket
 export async function DELETE(req, { params }) {
     try {
         const { id } = params;
@@ -28,6 +30,28 @@ export async function DELETE(req, { params }) {
     } catch (err) {
         return NextResponse.json(
             { message: 'There was an error deleting the ticket ', err },
+            { status: 500 }
+        );
+    }
+}
+
+export async function PUT(req, { params }) {
+    try {
+        const { id } = params;
+        const body = await req.json();
+        const ticketData = body.formData;
+
+        const updateTicket = await Ticket.findByIdAndUpdate(id, {
+            ...ticketData,
+        });
+
+        return NextResponse.json(
+            { message: 'Ticket successfully updated!' },
+            { status: 200 }
+        );
+    } catch (err) {
+        return NextResponse.json(
+            { message: 'There was an error updating the ticket', err },
             { status: 500 }
         );
     }
