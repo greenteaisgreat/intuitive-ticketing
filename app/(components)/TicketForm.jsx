@@ -5,8 +5,9 @@
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
-const TicketForm = () => {
+const TicketForm = ({ ticket }) => {
     const router = useRouter();
+    const EDITMODE = ticket._id === 'new' ? false : true;
 
     const startingTicketData = {
         title: '',
@@ -17,6 +18,15 @@ const TicketForm = () => {
         status: 'Not Started',
         active: false,
     };
+
+    if (EDITMODE) {
+        startingTicketData.title = ticket.title;
+        startingTicketData.description = ticket.description;
+        startingTicketData.category = ticket.category;
+        startingTicketData.priority = ticket.priority;
+        startingTicketData.progress = ticket.progress;
+        startingTicketData.status = ticket.status;
+    }
 
     const [formData, setFormData] = useState(startingTicketData);
 
@@ -33,17 +43,29 @@ const TicketForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        //this fetch request is using client side rendering
-        const res = await fetch('/api/Tickets', {
-            method: 'POST',
-            body: JSON.stringify({ formData }),
-            'content-type': 'application/json',
-        });
+        if (EDITMODE) {
+            //this fetch request is using client side rendering
+            const res = await fetch(`/api/Tickets/${ticket._id}`, {
+                method: 'PUT',
+                body: JSON.stringify({ formData }),
+                'content-type': 'application/json',
+            });
 
-        if (!res.ok) {
-            throw new Error('Failed to create a new ticket');
+            if (!res.ok) {
+                throw new Error('Failed to update ticket');
+            }
+        } else {
+            //this fetch request is using client side rendering
+            const res = await fetch('/api/Tickets', {
+                method: 'POST',
+                body: JSON.stringify({ formData }),
+                'content-type': 'application/json',
+            });
+
+            if (!res.ok) {
+                throw new Error('Failed to create a new ticket');
+            }
         }
-
         //upon successful ticket creation, refresh the page and redirect home
         router.refresh();
         router.push('/');
@@ -56,7 +78,7 @@ const TicketForm = () => {
                 className="flex w-1/2 flex-col gap-3"
                 onSubmit={handleSubmit}
             >
-                <h3>Create Your Ticket</h3>
+                <h3>{`${EDITMODE ? 'Update Your Ticket' : 'Create Your Ticket'}`}</h3>
                 <label htmlFor="title">Title</label>
                 <input
                     id="title"
@@ -170,7 +192,7 @@ const TicketForm = () => {
                     <input
                         type="submit"
                         className="btn"
-                        value="Create Ticket"
+                        value={`${EDITMODE ? 'Edit Ticket' : 'Submit Ticket'}`}
                     />
                 </div>
             </form>
