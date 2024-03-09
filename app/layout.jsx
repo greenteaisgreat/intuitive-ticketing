@@ -10,8 +10,8 @@ config.autoAddCss = false;
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-    title: 'Ticketing App',
-    description: 'Next.js Introductory Project by Nathan Bornstein',
+    title: 'Intuitive Ticketing',
+    description: 'The classiest ticketing application ever!',
 };
 
 export default function RootLayout({ children }) {
