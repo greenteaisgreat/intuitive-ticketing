@@ -67,8 +67,8 @@ const TicketForm = ({ ticket }) => {
             }
         }
         //upon successful ticket creation, refresh the page and redirect home
-        router.refresh();
         router.push('/');
+        router.refresh();
     };
 
     return (
