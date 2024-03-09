@@ -10,7 +10,7 @@ const DeleteBlock = ({ id }) => {
 
     const deleteTicket = async () => {
         const res = await fetch(
-            `https://intuitive-ticketing.vercel.app/${id}`,
+            `https://intuitive-ticketing.vercel.app/api/Tickets/${id}`,
             {
                 method: 'DELETE',
             }

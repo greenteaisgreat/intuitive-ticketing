@@ -1,9 +1,12 @@
 import TicketForm from '@/app/(components)/TicketForm';
 
 const getTicketById = async (id) => {
-    const res = await fetch(`https://intuitive-ticketing.vercel.app/${id}`, {
-        cache: 'no-store',
-    });
+    const res = await fetch(
+        `https://intuitive-ticketing.vercel.app/api/Tickets/${id}`,
+        {
+            cache: 'no-store',
+        }
+    );
 
     if (!res.ok) {
         throw new Error('There was an error retrieving that ticket');

@@ -2,10 +2,13 @@ import TicketCard from './(components)/TicketCard';
 
 const getTickets = async () => {
     try {
-        const res = await fetch('https://intuitive-ticketing.vercel.app/', {
-            //doesn't store the fetched ticket data if no new tickets exist
-            cache: 'no-store',
-        });
+        const res = await fetch(
+            'https://intuitive-ticketing.vercel.app/api/Tickets',
+            {
+                //doesn't store the fetched ticket data if no new tickets exist
+                cache: 'no-store',
+            }
+        );
 
         //if there is new ticket data, it will return the response
         return res.json();
