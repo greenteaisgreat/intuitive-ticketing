@@ -14,7 +14,7 @@ const Nav = () => {
                 </Link>
             </div>
             <div>
-                <p className="mr-4 text-2xl font-bold text-default-100">
+                <p className="text-2xl font-bold text-default-100">
                     I.T. (Intuitive Ticketing)
                 </p>
             </div>
