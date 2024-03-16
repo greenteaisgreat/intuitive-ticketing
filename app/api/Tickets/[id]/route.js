@@ -11,7 +11,7 @@ export async function GET(req, { params }) {
         return NextResponse.json({ foundTicket }, { status: 200 });
     } catch (err) {
         return NextResponse.json(
-            { message: 'There was an error finding that ticket', err },
+            { message: 'There was an error finding that ticket ', err },
             { status: 500 }
         );
     }
